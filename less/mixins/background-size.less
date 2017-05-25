@@ -1,0 +1,19 @@
+/*
+Background size mixin
+==============================================
+The mixins provides you a cross-browser compatible method to set a background-size.
+
+
+######Example:
+`.background-size([value]);`
+
+`@param: {String} properties: The background-size(s) that should be applied`
+*/
+
+.background-size(@size) {
+	-webkit-background-size: @size;
+	-moz-background-size: @size;
+	-o-background-size: @size;
+	-ms-background-size: @size;
+	background-size: @size;
+}

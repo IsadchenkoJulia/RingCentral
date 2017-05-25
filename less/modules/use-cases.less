@@ -1,0 +1,43 @@
+.useCases {
+
+    .useCaseRow {
+        .unitize-height(390);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .useCaseMiddleCell {
+            .unitize-margin(0, 120);
+            width: 1px;
+            height: 100%;
+            background-color: @gray-medium;
+            position: relative;
+
+            &::after {
+                content: "";
+                .unitize-background-size(91, 91);
+
+                background-image: url("@{imagesPath}/useCase/icon-5.jpg");
+                background-repeat: no-repeat;
+                background-position: center;
+
+
+
+                display: block;
+                width: 144px;
+                height: 144px;
+                border: 1px solid #e8e8e8;
+                background-color: @body-bg;
+                border-radius: 50%;
+                margin-left: -72px;
+                margin-top: -72px;
+                top: 50%;
+                position: absolute;
+            }
+        }
+
+        .useCaseLeftCell, .useCaseRightCell {
+            flex: 1;
+        }
+    }
+}

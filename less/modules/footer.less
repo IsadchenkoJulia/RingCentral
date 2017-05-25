@@ -1,0 +1,21 @@
+footer {
+    .unitize(margin-top, 70);
+    background-color: @footer-bg;
+
+    .footerContent {
+        .clearfix();
+        .unitize-padding(27, 0, 20, 0);
+        .unitize(font-size, 12);
+        color: @gray;
+        clear: both;
+        border-top: 1px dashed @text-color;
+
+        a {
+            color: @gray;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

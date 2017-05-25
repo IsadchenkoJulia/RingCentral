@@ -1,0 +1,53 @@
+.constituentsCircle {
+    .unitize-width(550);
+    .unitize-height(550);
+    position: relative;
+
+    > a {
+        .unitize-width(78);
+        .unitize-height(78);
+        .unitize-margin(-39, 0, 0, -39);
+        .unitize(line-height, 78);
+        .border-radius(78px);
+        background-color: @brand-secondary;
+        position: absolute;
+        text-align: center;
+
+        &:hover, &:active {
+            background-color: @brand-secondary-light;
+        }
+
+        > span {
+            .unitize(font-size, 14);
+            position: absolute;
+            color: @text-color;
+            font-weight: 400;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        &::before {
+            .unitize(font-size, 40);
+            content: "\f1c9";
+            font-family: "FontAwesome", sans-serif;
+            display: inline-block;
+            color: @text-color-light;
+        }
+    }
+
+    // Generate circle item
+    @circleItemName: circleItem;
+    @circleCount: 12;
+    @circleSectorSize: 360 / @circleCount;
+
+    .generateCircleItem(@i: 0, @itemDeg: 0) when (@i < @circleCount) {
+        .@{circleItemName}-@{i} {
+            left: (50 + sin(@itemDeg * 1deg) * 50) * 1%;
+            top: (50 - cos(@itemDeg * 1deg) * 50) * 1%;
+        }
+
+        .generateCircleItem(@i + 1, @itemDeg + @circleSectorSize);
+    }
+
+    .generateCircleItem();
+}

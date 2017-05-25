@@ -1,0 +1,23 @@
+.socials {
+    > a {
+        .transition(background-color 0.3s ease);
+        .border-radius(3px);
+        .unitize-width(40);
+        .unitize-height(40);
+        .unitize(line-height, 40);
+        .unitize(font-size, 20);
+        background-color: @gray;
+        text-align: center;
+        color: @text-color-light;
+
+        &:hover, &:active {
+            color: @text-color-light;
+
+            &.fa-envelope { background-color: @email-color; }
+            &.fa-linkedin { background-color: @linkedin-color; }
+            &.fa-google-plus { background-color: @google-plus-color; }
+            &.fa-twitter { background-color: @twitter-color; }
+            &.fa-facebook { background-color: @facebook-color; }
+        }
+    }
+}

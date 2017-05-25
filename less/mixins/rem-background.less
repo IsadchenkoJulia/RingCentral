@@ -1,0 +1,19 @@
+.unitize-background-size(@widthValue, @heightValue, @baseValue: @remScaleFactor) {
+	@emWidthValue: (@widthValue / @baseValue);
+	@emHeightValue: (@heightValue / @baseValue);
+
+	-webkit-background-size: ~"@{emWidthValue}rem @{emHeightValue}rem";
+	-moz-background-size: ~"@{emWidthValue}rem @{emHeightValue}rem";
+	-o-background-size: ~"@{emWidthValue}rem @{emHeightValue}rem";
+	-ms-background-size: ~"@{emWidthValue}rem @{emHeightValue}rem";
+	background-size: ~"@{emWidthValue}rem @{emHeightValue}rem";
+}
+
+.rem-background(@widthValue, @heightValue, @backgroundImageUrl, @baseValue: @remScaleFactor) {
+	.unitize-width(@widthValue);
+	.unitize-height(@heightValue);
+	.unitize-background-size(@widthValue, @heightValue, @remScaleFactor);
+	background-image: url("@{imagesPath}/@{backgroundImageUrl}");
+	background-repeat: no-repeat;
+	background-position: center;
+}

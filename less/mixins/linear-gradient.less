@@ -1,0 +1,27 @@
+/*
+Gradient mixin
+====================================================
+The mixins provides you a cross-browser compatible method to set a linear gradient which goes from top to bottom.
+
+Please refer to <http://caniuse.com/css-gradients> to see the browser support table of the feature.
+
+######Linear Gradient Example:
+`.linear-gradient([startcolor-value], [endcolor-value]);`
+
+`@param {String} start The start color of the gradient`<br/>
+`@param {String} end The end color of the gradient`
+*/
+
+.linear-gradient(@start, @end) {
+	background-color: @start;
+	background-image: -ms-linear-gradient(top, @start, @end);
+	background-image: linear-gradient(to bottom, @start 0%, @end 100%);
+}
+.linear-gradient-horizontal(@start, @end) {
+	background-image: -ms-linear-gradient(left, @start, @end);
+	background-image: linear-gradient(to right, @start 0%, @end 100%);
+}
+.linear-gradient-multi(@firstPos, @firstColor, @secondPos, @secondColor, @thirdPos, @thirdColor, @fourthPos, @fourthColor, @startFrom: top, @endTo: bottom) {
+	background-image: -ms-linear-gradient(@startFrom, @firstColor @firstPos,@secondColor @secondPos,@thirdColor @thirdPos,@fourthColor @fourthPos);
+	background-image: linear-gradient(to @endTo, @firstColor @firstPos,@secondColor @secondPos,@thirdColor @thirdPos,@fourthColor @fourthPos);
+}
