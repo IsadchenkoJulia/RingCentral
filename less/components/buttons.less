@@ -23,7 +23,7 @@ Creates a basic button. Button type classes can be added by using multiple class
     -webkit-font-smoothing: inherit;
     display: inline-block;
     position: relative;
-    font-weight: 400;
+    font-weight: @font-weight-medium;
     text-decoration: none;
     text-align: center;
     cursor: pointer;
@@ -44,7 +44,7 @@ Creates a basic button. Button type classes can be added by using multiple class
 
     small {
         display: block;
-        font-weight: 400;
+        font-weight: @font-weight-medium;
     }
 
     /*
@@ -60,21 +60,23 @@ Creates a basic button. Button type classes can be added by using multiple class
     */
 
     &.isSmall {
-        .unitize(height, 28);
-        .unitize(line-height, 28);
+        .unitize(height, 38);
+        .unitize(font-size, 14);
+        .unitize(line-height, 38);
+        font-weight: @font-weight-bold;
     }
 
     &.isLarge {
         .unitize(height, 62);
         .unitize(font-size, 20);
         .unitize(line-height, 62);
-        font-weight: 700;
+        font-weight: @font-weight-bold;
         text-transform: uppercase;
 
         small {
             .unitize(font-size, 14);
             .unitize(line-height, 17);
-            font-weight: 400;
+            font-weight: @font-weight-medium;
             text-transform: none;
         }
     }

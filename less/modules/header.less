@@ -23,7 +23,7 @@ header {
 
             > span {
                 .unitize(padding-left, 5);
-                font-weight: 700;
+                font-weight: @font-weight-bold;
                 color: @brand-secondary;
             }
         }
@@ -64,6 +64,7 @@ header {
             }
 
             > h1 {
+                .unitize(width, 550);
                 color: @text-color-light;
             }
 
@@ -95,22 +96,32 @@ header {
                 }
             }
 
-            .button {
+            [class^="buttonWrapper"] {
                 .unitize-margin(18, 0, 0, 10);
-                .unitize-width(220);
                 float: left;
 
-                &.isPrimary {
+                .button {
+                    .unitize-width(220);
+
+                    &.isSecondary {
+                        .unitize(line-height, 25);
+                        .unitize-padding(10, 10);
+                    }
+                }
+
+                &.buttonWrapperPrimary {
                     margin-left: 0;
+                    position: relative;
 
                     .arrowhead {
                         .unitize(font-size, 16);
+                        .unitize(margin-top, 10);
                         text-transform: none;
                         position: absolute;
                         left: 50%;
                         top: 100%;
                         white-space: nowrap;
-                        font-weight: 400;
+                        font-weight: @font-weight-medium;
 
                         &::before {
                             .rem-background(47, 23, "arrowhead.png");
@@ -119,11 +130,6 @@ header {
                             display: inline-block;
                         }
                     }
-                }
-
-                &.isSecondary {
-                    .unitize(line-height, 25);
-                    .unitize-padding(10, 10);
                 }
             }
         }
@@ -174,6 +180,10 @@ header {
 
         > [class^="boost"] {
             flex: 1;
+
+            p {
+                .unitize-padding(0, 35);
+            }
         }
 
         .boostPeople .boostDigit::before {

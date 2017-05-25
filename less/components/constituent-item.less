@@ -3,37 +3,37 @@
     .unitize-height(550);
     position: relative;
 
-    > a {
-        .unitize-width(78);
-        .unitize-height(78);
-        .unitize-margin(-39, 0, 0, -39);
-        .unitize(line-height, 78);
-        .border-radius(78px);
-        background-color: @brand-secondary;
+    [class^="circleItem-"] {
         position: absolute;
-        text-align: center;
 
-        &:hover, &:active {
-            background-color: @brand-secondary-light;
+        > a {
+            .unitize-width(78);
+            .unitize-height(78);
+            .unitize-margin(-39, 0, 0, -39);
+            .border-radius(78px);
+            background-color: @brand-secondary;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+
+            &:hover, &:active {
+                background-color: @brand-secondary-light;
+            }
+
+            > img {
+                width: 60%;
+            }
         }
 
         > span {
             .unitize(font-size, 14);
-            position: absolute;
             color: @text-color;
-            font-weight: 400;
+            font-weight: @font-weight-medium;
             text-transform: uppercase;
             white-space: nowrap;
         }
-
-        &::before {
-            .unitize(font-size, 40);
-            content: "\f1c9";
-            font-family: "FontAwesome", sans-serif;
-            display: inline-block;
-            color: @text-color-light;
-        }
     }
+
 
     // Generate circle item
     @circleItemName: circleItem;

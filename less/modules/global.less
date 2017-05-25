@@ -17,7 +17,7 @@ body {
     .unitize(font-size, @font-size-base);
     font-family: 'Lato', sans-serif;
     color: @text-color;
-    font-weight: 300;
+    font-weight: @font-weight-normal;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 }
@@ -60,7 +60,7 @@ ul {
 h1, h2, h3, h4, h5, h6 {
     .unitize(line-height, 26);
     .unitize-margin(28, 0, 10, 0);
-    font-weight: 300;
+    font-weight: @font-weight-normal;
     color: @brand-secondary;
 }
 
@@ -102,11 +102,5 @@ p {
 }
 
 b, strong {
-    font-weight: 700;
-}
-
-font {
-    color: @brand-primary;
-    font-weight: 700;
-    display: block;
+    font-weight: @font-weight-bold;
 }

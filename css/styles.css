@@ -2592,10 +2592,13 @@ Creates a basic button. Button type classes can be added by using multiple class
   font-weight: 400;
 }
 .button.isSmall {
-  height: 28px;
-  height: 1.75rem;
-  line-height: 28px;
-  line-height: 1.75rem;
+  height: 38px;
+  height: 2.375rem;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 38px;
+  line-height: 2.375rem;
+  font-weight: 700;
 }
 .button.isLarge {
   height: 62px;
@@ -2616,7 +2619,7 @@ Creates a basic button. Button type classes can be added by using multiple class
   text-transform: none;
 }
 .button.isPrimary {
-  background-color: #0073ae;
+  background-color: #ff8900;
 }
 .button.isPrimary:hover {
   background-color: #ff9d2a;
@@ -2856,41 +2859,37 @@ fieldset {
   height: 34.375rem;
   position: relative;
 }
-.constituentsCircle > a {
+.constituentsCircle [class^="circleItem-"] {
+  position: absolute;
+}
+.constituentsCircle [class^="circleItem-"] > a {
   width: 78px;
   width: 4.875rem;
   height: 78px;
   height: 4.875rem;
   margin: -39px 0px 0px -39px;
   margin: -2.4375rem 0rem 0rem -2.4375rem;
-  line-height: 78px;
-  line-height: 4.875rem;
   border-radius: 78px;
   background-clip: padding-box;
   background-color: #0073ae;
-  position: absolute;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
-.constituentsCircle > a:hover,
-.constituentsCircle > a:active {
+.constituentsCircle [class^="circleItem-"] > a:hover,
+.constituentsCircle [class^="circleItem-"] > a:active {
   background-color: #0090c2;
 }
-.constituentsCircle > a > span {
+.constituentsCircle [class^="circleItem-"] > a > img {
+  width: 60%;
+}
+.constituentsCircle [class^="circleItem-"] > span {
   font-size: 14px;
   font-size: 0.875rem;
-  position: absolute;
   color: #585858;
   font-weight: 400;
   text-transform: uppercase;
   white-space: nowrap;
-}
-.constituentsCircle > a::before {
-  font-size: 40px;
-  font-size: 2.5rem;
-  content: "\f1c9";
-  font-family: "FontAwesome", sans-serif;
-  display: inline-block;
-  color: #fff;
 }
 .constituentsCircle .circleItem-0 {
   left: 50%;
@@ -2984,7 +2983,7 @@ img {
   height: auto;
 }
 a {
-  color: #0073ae;
+  color: #ff8900;
   text-decoration: none;
   outline: none;
   cursor: pointer;
@@ -3062,11 +3061,6 @@ p {
 b,
 strong {
   font-weight: 700;
-}
-font {
-  color: #0073ae;
-  font-weight: 700;
-  display: block;
 }
 header .topHeader {
   padding: 14px 0px 14px 0px;
@@ -3168,6 +3162,8 @@ header .topBannerWrapper .topBannerInfo *:first-child {
   margin-top: 0;
 }
 header .topBannerWrapper .topBannerInfo > h1 {
+  width: 550px;
+  width: 34.375rem;
   color: #fff;
 }
 header .topBannerWrapper .topBannerInfo > p {
@@ -3205,21 +3201,32 @@ header .topBannerWrapper .topBannerInfo > ul > li::before {
   height: 0.5rem;
   content: "";
   display: inline-block;
-  background-color: #0073ae;
+  background-color: #ff8900;
 }
-header .topBannerWrapper .topBannerInfo .button {
+header .topBannerWrapper .topBannerInfo [class^="buttonWrapper"] {
   margin: 18px 0px 0px 10px;
   margin: 1.125rem 0rem 0rem 0.625rem;
-  width: 220px;
-  width: 13.75rem;
   float: left;
 }
-header .topBannerWrapper .topBannerInfo .button.isPrimary {
-  margin-left: 0;
+header .topBannerWrapper .topBannerInfo [class^="buttonWrapper"] .button {
+  width: 220px;
+  width: 13.75rem;
 }
-header .topBannerWrapper .topBannerInfo .button.isPrimary .arrowhead {
+header .topBannerWrapper .topBannerInfo [class^="buttonWrapper"] .button.isSecondary {
+  line-height: 25px;
+  line-height: 1.5625rem;
+  padding: 10px 10px 10px 10px;
+  padding: 0.625rem 0.625rem 0.625rem 0.625rem;
+}
+header .topBannerWrapper .topBannerInfo [class^="buttonWrapper"].buttonWrapperPrimary {
+  margin-left: 0;
+  position: relative;
+}
+header .topBannerWrapper .topBannerInfo [class^="buttonWrapper"].buttonWrapperPrimary .arrowhead {
   font-size: 16px;
   font-size: 1rem;
+  margin-top: 10px;
+  margin-top: 0.625rem;
   text-transform: none;
   position: absolute;
   left: 50%;
@@ -3227,7 +3234,7 @@ header .topBannerWrapper .topBannerInfo .button.isPrimary .arrowhead {
   white-space: nowrap;
   font-weight: 400;
 }
-header .topBannerWrapper .topBannerInfo .button.isPrimary .arrowhead::before {
+header .topBannerWrapper .topBannerInfo [class^="buttonWrapper"].buttonWrapperPrimary .arrowhead::before {
   width: 47px;
   width: 2.9375rem;
   height: 23px;
@@ -3244,12 +3251,6 @@ header .topBannerWrapper .topBannerInfo .button.isPrimary .arrowhead::before {
   margin-right: 0.9375rem;
   content: "";
   display: inline-block;
-}
-header .topBannerWrapper .topBannerInfo .button.isSecondary {
-  line-height: 25px;
-  line-height: 1.5625rem;
-  padding: 10px 10px 10px 10px;
-  padding: 0.625rem 0.625rem 0.625rem 0.625rem;
 }
 header .topBannerWrapper .topBannerVideo {
   margin: 10px 0px 10px 0px;
@@ -3303,7 +3304,7 @@ header .boosts .boostDigit {
   line-height: 2.8125rem;
   font-size: 58px;
   font-size: 3.625rem;
-  color: #0073ae;
+  color: #ff8900;
 }
 header .boosts .boostImage img,
 header .boosts .boostDigit img {
@@ -3311,6 +3312,10 @@ header .boosts .boostDigit img {
 }
 header .boosts > [class^="boost"] {
   flex: 1;
+}
+header .boosts > [class^="boost"] p {
+  padding: 0px 35px 0px 35px;
+  padding: 0rem 2.1875rem 0rem 2.1875rem;
 }
 header .boosts .boostPeople .boostDigit::before {
   width: 60px;
@@ -3362,45 +3367,109 @@ header .boosts .boostPeople .boostDigit::before {
   background-color: #f2f2f2;
   text-align: center;
 }
-.useCases .useCaseRow {
+.useCases {
+  text-align: center;
+}
+.useCases .useCaseWrapper {
+  margin-top: -100px;
+  margin-top: -6.25rem;
+  text-align: left;
+}
+.useCases .useCaseWrapper .useCaseRow {
   height: 390px;
   height: 24.375rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.useCases .useCaseRow .useCaseMiddleCell {
-  margin: 0px 120px 0px 120px;
-  margin: 0rem 7.5rem 0rem 7.5rem;
-  width: 1px;
+.useCases .useCaseWrapper .useCaseRow img {
+  margin: 0 auto;
+}
+.useCases .useCaseWrapper .useCaseRow .useCaseMiddleCell {
+  width: 260px;
+  width: 16.25rem;
   height: 100%;
-  background-color: #e8e8e8;
   position: relative;
 }
-.useCases .useCaseRow .useCaseMiddleCell::after {
-  content: "";
+.useCases .useCaseWrapper .useCaseRow .useCaseMiddleCell::after {
   -webkit-background-size: 5.6875rem 5.6875rem;
   -moz-background-size: 5.6875rem 5.6875rem;
   -o-background-size: 5.6875rem 5.6875rem;
   -ms-background-size: 5.6875rem 5.6875rem;
   background-size: 5.6875rem 5.6875rem;
-  background-image: url("../resources/images/useCase/icon-5.jpg");
+  width: 144px;
+  width: 9rem;
+  height: 144px;
+  height: 9rem;
+  margin: -72px 0px 0px -72px;
+  margin: -4.5rem 0rem 0rem -4.5rem;
+  border-radius: 144px;
+  background-clip: padding-box;
+  content: "";
   background-repeat: no-repeat;
   background-position: center;
   display: block;
-  width: 144px;
-  height: 144px;
   border: 1px solid #e8e8e8;
   background-color: #fff;
-  border-radius: 50%;
-  margin-left: -72px;
-  margin-top: -72px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+}
+.useCases .useCaseWrapper .useCaseRow .useCaseMiddleCell::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100%;
+  background: #e8e8e8;
+  margin-left: -0.5px;
+  left: 50%;
+  position: absolute;
+}
+.useCases .useCaseWrapper .useCaseRow .useCaseLeftCell,
+.useCases .useCaseWrapper .useCaseRow .useCaseRightCell {
+  flex: 1;
+}
+.useCases .useCaseWrapper .useCaseRow:first-child .useCaseMiddleCell::before {
+  height: 50%;
+  bottom: 0;
+}
+.useCases .useCaseWrapper .useCaseRow:last-child .useCaseMiddleCell::before {
+  height: 50%;
+}
+.useCases .useCaseWrapper .useCaseRow:nth-child(1) .useCaseMiddleCell::after {
+  background-image: url("../resources/images/useCase/icon-1.jpg");
+}
+.useCases .useCaseWrapper .useCaseRow:nth-child(2) .useCaseMiddleCell::after {
+  background-image: url("../resources/images/useCase/icon-2.jpg");
+}
+.useCases .useCaseWrapper .useCaseRow:nth-child(3) .useCaseMiddleCell::after {
+  background-image: url("../resources/images/useCase/icon-3.jpg");
+}
+.useCases .useCaseWrapper .useCaseRow:nth-child(4) .useCaseMiddleCell::after {
+  background-image: url("../resources/images/useCase/icon-4.jpg");
+}
+.useCases .useCaseWrapper .useCaseRow:nth-child(5) .useCaseMiddleCell::after {
+  background-image: url("../resources/images/useCase/icon-5.jpg");
+}
+.useCases .learnMoreWrapper {
+  margin-top: 35px;
+  margin-top: 2.1875rem;
+  position: relative;
+}
+.useCases .learnMoreWrapper::before {
+  content: "";
+  display: block;
+  background: #e8e8e8;
+  width: 100%;
+  height: 1px;
   top: 50%;
   position: absolute;
 }
-.useCases .useCaseRow .useCaseLeftCell,
-.useCases .useCaseRow .useCaseRightCell {
-  flex: 1;
+.useCases .learnMoreWrapper .learnMore {
+  outline-width: 25px;
+  outline-width: 1.5625rem;
+  outline-style: solid;
+  outline-color: #fff;
 }
 footer {
   margin-top: 70px;
