@@ -14,11 +14,15 @@ Please refer to <http://caniuse.com/css-boxshadow> to see the browser support ta
 `@param: {String} color: Color of the shadow (Default: #000)`<br/>
 */
 
-.box-shadow(@shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2)) {
-	box-shadow: @shadow;
+.box-shadow(@shadow: 0 0 7px 0 @shadow-color) {
+    -moz-box-shadow: @shadow;
+    -webkit-box-shadow: @shadow;
+    box-shadow: @shadow;
 }
 
 .reset-box-shadow() {
     @shadow: 0 0 0 transparent;
+    -moz-box-shadow: @shadow;
+    -webkit-box-shadow: @shadow;
     box-shadow: @shadow;
 }

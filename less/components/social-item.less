@@ -1,23 +1,31 @@
 .socials {
+    display: flex;
+    justify-content: center;
+
     > a {
         .transition(background-color 0.3s ease);
+        .unitize-margin(0, 0, 0, 10);
         .border-radius(3px);
         .unitize-width(40);
         .unitize-height(40);
-        .unitize(line-height, 40);
-        .unitize(font-size, 20);
         background-color: @gray;
-        text-align: center;
-        color: @text-color-light;
+        display: flex;
+        justify-content: center;
+
+        &:first-child {
+            margin-left: 0;
+        }
 
         &:hover, &:active {
-            color: @text-color-light;
+            &.envelope { background-color: @email-color; }
+            &.linkedin { background-color: @linkedin-color; }
+            &.google-plus { background-color: @google-plus-color; }
+            &.twitter { background-color: @twitter-color; }
+            &.facebook { background-color: @facebook-color; }
+        }
 
-            &.fa-envelope { background-color: @email-color; }
-            &.fa-linkedin { background-color: @linkedin-color; }
-            &.fa-google-plus { background-color: @google-plus-color; }
-            &.fa-twitter { background-color: @twitter-color; }
-            &.fa-facebook { background-color: @facebook-color; }
+        > img {
+            width: 55%;
         }
     }
 }

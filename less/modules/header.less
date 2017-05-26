@@ -7,40 +7,8 @@ header {
         align-items: center;
         border-bottom: 1px solid @gray-light;
 
-        .logo {
-            .rem-background(162, 23, "logo.png");
-            margin-right: auto;
-            display: block;
-        }
-
-        .contacts {
-            .border-radius(3px);
-            .unitize(font-size, 20);
-            .unitize-padding(6, 30, 7);
-            color: @border-color;
-            border: 1px solid @border-color;
-            margin: 0 auto;
-
-            > span {
-                .unitize(padding-left, 5);
-                font-weight: @font-weight-bold;
-                color: @brand-secondary;
-            }
-        }
-
         .socials {
-            .clearfix();
             margin-left: auto;
-
-            > a {
-                .unitize-margin(0, 0, 0, 10);
-                display: block;
-                float: left;
-
-                &:first-child {
-                    margin-left: 0;
-                }
-            }
         }
     }
 
@@ -96,7 +64,7 @@ header {
                 }
             }
 
-            [class^="buttonWrapper"] {
+            > [class^="button"] {
                 .unitize-margin(18, 0, 0, 10);
                 float: left;
 
@@ -109,27 +77,9 @@ header {
                     }
                 }
 
-                &.buttonWrapperPrimary {
+                &.buttonPrimaryWrapper {
                     margin-left: 0;
                     position: relative;
-
-                    .arrowhead {
-                        .unitize(font-size, 16);
-                        .unitize(margin-top, 10);
-                        text-transform: none;
-                        position: absolute;
-                        left: 50%;
-                        top: 100%;
-                        white-space: nowrap;
-                        font-weight: @font-weight-medium;
-
-                        &::before {
-                            .rem-background(47, 23, "arrowhead.png");
-                            .unitize(margin-right, 15);
-                            content: "";
-                            display: inline-block;
-                        }
-                    }
                 }
             }
         }
@@ -140,6 +90,7 @@ header {
             color: @brand-secondary-ultralight;
             width: 22%;
             display: table;
+            float: right;
 
             &:hover {
                 text-decoration: underline;

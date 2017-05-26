@@ -1,0 +1,110 @@
+.plans {
+    text-align: center;
+    .unitize(margin-bottom, 50);
+
+    > h2 {
+        .unitize(margin-bottom, 20) ;
+    }
+
+    .plansPreview {
+        .unitize-margin(65, 40, 80);
+
+        [class^="planType"] {
+            .border-radius(5px);
+            background-color: @brand-secondary;
+            color: @text-color-light;
+
+            > h4 {
+                .unitize-margin(0, 0, 8, 0);
+                color: @text-color-light;
+            }
+
+            > p {
+                .unitize(font-size, 13.99);
+                .unitize(line-height, 16);
+                .unitize-padding(0, 45);
+                margin: 0;
+            }
+
+            .planPrice {
+                .unitize-padding(22, 0);
+                .unitize-margin(15, 0, 0);
+                border-top: 1px solid @brand-secondary-bright;
+
+                > span {
+                    .unitize(font-size, 14);
+                    font-weight: @font-weight-bold;
+                    display: block;
+                    text-transform: uppercase;
+
+                    &:first-child {
+                        .unitize(font-size, 17.58);
+                        .unitize(padding-bottom, 12);
+                        font-weight: @font-weight-medium;
+                        font-style: italic;
+                        text-transform: none;
+                    }
+                }
+
+                > big {
+                    .unitize(padding-top, 12);
+                    .unitize(font-size, 74.26);
+                    font-weight: @font-weight-bold;
+                    line-height: 1;
+
+                    sup {
+                        .unitize-padding(0, 5);
+                        .unitize(font-size, 38.63);
+                        vertical-align: super;
+                        position: static;
+                    }
+
+                    .currency {
+                        .unitize(font-size, 15.71);
+                        position: relative;
+                        top: -0.9em;
+                    }
+                }
+            }
+
+            .button {
+                .unitize-padding(0, 40);
+            }
+
+            &.planTypeStandart {
+                .unitize-margin(-20, -5);
+                .box-shadow(0 0 32px 0 @shadow-color);
+                background-color: @body-bg;
+                color: @text-color;
+
+                > h4 {
+                    color: @brand-secondary;
+                }
+
+                .planPrice {
+                    .unitize(margin-top, 18);
+                    .unitize-padding(30, 0);
+                    border-color: darken(@gray-medium, 1);
+
+                    > big {
+                        color: @brand-secondary;
+                    }
+                }
+            }
+        }
+    }
+
+    .plansOption {
+        > div {
+            .unitize-min-height(68);
+            font-weight: @font-weight-medium;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            > h5 {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+.finalScreen {
+    .box-shadow(0 1px 10px 0 @shadow-color);
+    .border-radius(5px);
+    .unitize-padding(62, 145);
+    .unitize(margin-top, 45);
+    .unitize(margin-bottom, 45);
+
+    > h2 {
+        .unitize-padding(0, 30);
+        margin-top: 0;
+    }
+
+    .buttonsWrapper {
+        .unitize(margin-top, 110);
+        display: flex;
+
+        > [class^="button"] {
+            .unitize-margin(0, 0, 0, 70);
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            .button {
+                .unitize(margin-bottom, 12);
+            }
+        }
+
+        .buttonPrimaryWrapper {
+            position: relative;
+
+            .arrowhead {
+                .unitize-margin(0, 0, 15, 12);
+                bottom: 100%;
+                top: auto;
+                left: 0;
+
+                &::before {
+                    .arrowheadImage(32, 21, "arrowhead-colored.png");
+                    .unitize(top, 12);
+                }
+            }
+
+            > ul > li {
+                .clearfix();
+                .unitize(margin-top, 7);
+                .unitize(18);
+                list-style: none;
+
+                &::before {
+                    .unitize-width(7);
+                    .unitize-height(7);
+                    .border-radius(7px);
+                    .unitize-margin(8, 10, 8, 0);
+                    content: "";
+                    background-color: @brand-primary;
+                    display: block;
+                    float: left;
+                }
+            }
+        }
+
+        .contactPhone {
+            .unitize(16);
+            .unitize-padding(10, 10);
+            width: 100%;
+            text-align: center;
+
+            > span {
+                .unitize(24);
+                display: block;
+                padding: 0;
+            }
+        }
+    }
+}
