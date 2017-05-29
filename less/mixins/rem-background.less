@@ -17,3 +17,11 @@
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
+.rem-sprite-background(@spriteWidthValue, @spriteHeightValue, @widthValue, @heightValue, @backgroundImageUrl, @baseValue: @remScaleFactor) {
+	.unitize-width(@widthValue);
+	.unitize-height(@heightValue);
+	.unitize-background-size(@spriteWidthValue, @spriteHeightValue, @remScaleFactor);
+	background-image: url("@{imagesPath}/@{backgroundImageUrl}");
+	background-repeat: no-repeat;
+}

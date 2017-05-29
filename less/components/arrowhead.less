@@ -1,7 +1,3 @@
-.arrowheadImage(@imageWidth: 47, @imageHeight: 22, @imageURL: "arrowhead.png") {
-    .rem-background(@imageWidth, @imageHeight, @imageURL);
-}
-
 .arrowhead {
     .unitize(font-size, 16);
     .unitize-margin(18, 0, 0);
@@ -13,7 +9,7 @@
     font-weight: @font-weight-medium;
 
     &::before {
-        .arrowheadImage();
+        .icon-sprite();
         .unitize(margin-right, 15);
         .unitize(top, -9);
         content: "";

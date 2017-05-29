@@ -1,4 +1,8 @@
 .useCases {
+    @itemCount: 5;
+    @itemWidth: 143;
+    @itemHeight: @itemWidth;
+
     text-align: center;
 
     .useCaseWrapper {
@@ -21,20 +25,18 @@
                 position: relative;
 
                 &::after {
-                    .unitize-background-size(91, 91);
-                    .unitize-width(144);
-                    .unitize-height(144);
-                    .unitize-margin(-72, 0, 0, -72);
-                    .border-radius(144px);
+                    .rem-sprite-background (@itemWidth * @itemCount, @itemHeight, @itemWidth, @itemWidth, "use-case-icons.png");
+                    .unitize-margin(@itemHeight / -2, 0, 0, @itemWidth / -2);
+                    .border-radius(@itemWidth * 1px);
                     content: "";
-                    background-repeat: no-repeat;
-                    background-position: center;
                     display: block;
                     border: 1px solid @gray-medium;
                     background-color: @body-bg;
                     top: 50%;
                     left: 50%;
                     position: absolute;
+
+                    background-position: 0 0;
                 }
 
                 &::before {
@@ -62,17 +64,13 @@
                 height: 50%;
             }
 
-            // Generate use case icon
-            @useCaseIconsCount: 5;
-
-            .generateUseCaseIcon(@i: 1) when (@i <= @useCaseIconsCount) {
+            // Generate use case icon background
+            .generateUseCaseIcon(@i: 1, @backgroundPositionX: 0) when (@i <= @itemCount) {
                 &:nth-child(@{i}) .useCaseMiddleCell::after {
-                    background-image: url("@{imagesPath}/use-case/icon-@{i}.jpg");
+                    .unitize-double(background-position, -@backgroundPositionX, 0);
                 }
-
-                .generateUseCaseIcon(@i + 1);
+                .generateUseCaseIcon(@i + 1, @backgroundPositionX + @itemWidth);
             }
-
             .generateUseCaseIcon();
         }
     }

@@ -41,6 +41,17 @@ In addition to the general `.unitize()` mixin, contains specific mixins to quick
 	@{property}: ~"@{remValue}rem";
 }
 
+.unitize-double(@property, @firstValue, @secondValue, @baseValue: @remScaleFactor) {
+	@pxFirstValue: @firstValue;
+	@emFirstValue: (@firstValue / @baseValue);
+
+	@pxSecondValue: @secondValue;
+	@emSecondValue: (@secondValue / @baseValue);
+
+	@{property}: ~"@{pxFirstValue}px @{pxSecondValue}px";
+	@{property}: ~"@{emFirstValue}rem @{emSecondValue}rem";
+}
+
 .unitize-multiple(@topValue, @rightValue, @bottomValue: @topValue, @leftValue: @rightValue, @baseValue: @remScaleFactor, @property: padding) {
 	@pxTopValue: @topValue;
 	@emTopValue: (@topValue / @baseValue);

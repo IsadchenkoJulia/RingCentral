@@ -1,9 +1,11 @@
 .logo {
     .rem-background(162, 23, "logo.png");
+    .rem-sprite-background(162, 46, 162, 23, "logo.png");
+    background-position: top center;
     margin-right: auto;
     display: block;
     
     &.logoInverse {
-        background-image: url("@{imagesPath}/logo-inverse.png");
+        background-position: bottom center;
     }
 }
