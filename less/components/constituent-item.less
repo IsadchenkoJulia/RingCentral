@@ -1,90 +1,89 @@
 .constituentsCircle {
-    @circleItemClass: circleItem;
-    @circleCount: 12;
-    @circleSectorSize: 360 / @circleCount;
-    @circleDiameter: 77;
-    @circleRadius: @circleDiameter / 2;
-    @circleTextNameWidth: 200;
-    @circleTextFontSize: 14;
-    @backgroundPositionY: (@circleCount - 1) * @circleDiameter;
+	@circleItemClass: circleItem;
+	@circleCount: 12;
+	@circleSectorSize: 360 / @circleCount;
+	@circleDiameter: 77;
+	@circleRadius: @circleDiameter / 2;
+	@circleTextNameWidth: 200;
+	@circleTextFontSize: 14;
+	@backgroundPositionY: (@circleCount - 1) * @circleDiameter;
 
-    .unitize-width(550);
-    .unitize-height(550);
-    position: relative;
+	.unitize-width(550);
+	.unitize-height(550);
+	position: relative;
 
-    [class^="circleItem-"] {
-        > a {
-            .transition(opacity 0.3s ease);
-            .unitize-margin(-@circleRadius, 0, 0, -@circleRadius);
-            .border-radius(@circleDiameter * 1px);
-            .rem-sprite-background (@circleDiameter * 2, @circleDiameter * @circleCount, @circleDiameter, @circleDiameter, "circle-icons.png");
-            background-color: @brand-secondary;
-            position: absolute;
-            display: flex;
-            justify-content: center;
+	[class^="circleItem-"] {
+		> a {
+			.transition(opacity 0.3s ease);
+			.unitize-margin(-@circleRadius, 0, 0, -@circleRadius);
+			.border-radius(@circleDiameter * 1px);
+			.rem-sprite-background (@circleDiameter * 2, @circleDiameter * @circleCount, @circleDiameter, @circleDiameter, "circle-icons.png");
+			background-color: @brand-secondary;
+			position: absolute;
+			display: flex;
+			justify-content: center;
 
-            &:hover, &:active {
-                .opacity(0.74);
-                background-color: @brand-secondary-light;
-            }
-        }
+			&:hover, &:active {
+				.opacity(0.74);
+				background-color: @brand-secondary-light;
+			}
+		}
 
-        > span {
-            .unitize-width(@circleTextNameWidth);
-            .unitize(font-size, @circleTextFontSize);
-            .unitize(margin-top, @circleTextFontSize / -2);
-            .unitize-padding(0, 25);
-            color: @text-color;
-            font-weight: @font-weight-medium;
-            text-transform: uppercase;
-            white-space: nowrap;
-            position: absolute;
-            top: 0;
-            left: 100%;
-        }
-    }
+		> span {
+			.unitize-width(@circleTextNameWidth);
+			.unitize(font-size, @circleTextFontSize);
+			.unitize(margin-top, @circleTextFontSize / -2);
+			.unitize-padding(0, 25);
+			color: @text-color;
+			font-weight: @font-weight-medium;
+			text-transform: uppercase;
+			white-space: nowrap;
+			position: absolute;
+			top: 0;
+			left: 100%;
+		}
+	}
 
+	// Generate circle item
+	.generateCircleItem(@i: 0, @itemDeg: 0, @backgroundPositionY: @backgroundPositionY) when (@i < @circleCount) {
+		.@{circleItemClass}-@{i} {
+			> a {
+				.unitize-double(background-position, 0, -@backgroundPositionY);
+				left: (50 + sin(@itemDeg * 1deg) * 50) * 1%;
+				top: (50 - cos(@itemDeg * 1deg) * 50) * 1%;
+			}
 
-    // Generate circle item
-    .generateCircleItem(@i: 0, @itemDeg: 0, @backgroundPositionY: @backgroundPositionY) when (@i < @circleCount) {
-        .@{circleItemClass}-@{i} {
-            > a {
-                .unitize-double(background-position, 0, -@backgroundPositionY);
-                left: (50 + sin(@itemDeg * 1deg) * 50) * 1%;
-                top: (50 - cos(@itemDeg * 1deg) * 50) * 1%;
-            }
+			> span {
+				left: (50 + sin(@itemDeg * 1deg) * 56) * 1%;
+				top: (50 - cos(@itemDeg * 1deg) * 56) * 1%;
 
-            > span {
-                left: (50 + sin(@itemDeg * 1deg) * 56) * 1%;
-                top: (50 - cos(@itemDeg * 1deg) * 56) * 1%;
+			}
 
-            }
+			.LeftSideText() when (@i > (@circleCount / 2)) {
+				> span {
+					.unitize(margin-left, -@circleTextNameWidth);
+					text-align: right;
+				}
+			}
+			.LeftSideText();
 
-            .LeftSideText() when (@i > (@circleCount / 2)) {
-                > span {
-                    .unitize(margin-left, -@circleTextNameWidth);
-                    text-align: right;
-                }
-            }
-            .LeftSideText();
+			.VerticalText() when (@i = (@circleCount / 2)), (@i = 0) {
+				> span {
+					.unitize(margin-left, -@circleTextNameWidth / 2);
+					.unitize(margin-top, 15);
+					text-align: center;
+				}
 
-            .VerticalText() when (@i = (@circleCount / 2)), (@i = 0) {
-                > span {
-                    .unitize(margin-left, -@circleTextNameWidth / 2);
-                    .unitize(margin-top, 15);
-                    text-align: center;
-                }
-
-                .VerticalTopText() when (@i = 0) {
-                    > span {
-                        .unitize(margin-top, -@circleTextFontSize - 15);
-                    }
-                }
-                .VerticalTopText();
-            }
-            .VerticalText();
-        }
-        .generateCircleItem(@i + 1, @itemDeg + @circleSectorSize, @backgroundPositionY - @circleDiameter);
-    }
-    .generateCircleItem();
+				.VerticalTopText() when (@i = 0) {
+					> span {
+						.unitize(margin-top, -@circleTextFontSize - 15);
+					}
+				}
+				.VerticalTopText();
+			}
+			.VerticalText();
+		}
+		.generateCircleItem(@i + 1, @itemDeg + @circleSectorSize, @backgroundPositionY - @circleDiameter);
+	}
+	.generateCircleItem();
 }

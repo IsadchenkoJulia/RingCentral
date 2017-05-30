@@ -6,31 +6,31 @@ input[type="password"],
 input[type="number"],
 input[type="email"],
 input[type="tel"] {
-    .transition(border-color 0.3s ease);
-    .appearance(none);
-    .box-shadow(0 0 2px 0 @shadow-color);
-    .border-radius(5px);
-    .box-sizing();
-    .unitize(line-height, 19);
-    .unitize(@input-font-size, 16, font-size);
-    .unitize-padding(0, 10);
-    .unitize(margin-top, 10);
-    width: 100%;
-    background: @input-bg;
-    border: 1px solid transparent;
-    color: @input-color;
-    font-style: italic;
-    text-align: left;
-    outline: none;
-    display: block;
+	.transition(border-color 0.3s ease);
+	.appearance(none);
+	.box-shadow(0 0 2px 0 @shadow-color);
+	.border-radius(5px);
+	.box-sizing();
+	.unitize(line-height, 19);
+	.unitize(@input-font-size, 16, font-size);
+	.unitize-padding(0, 10);
+	.unitize(margin-top, 10);
+	width: 100%;
+	background: @input-bg;
+	border: 1px solid transparent;
+	color: @input-color;
+	font-style: italic;
+	text-align: left;
+	outline: none;
+	display: block;
 
-    &:focus {
-        border-color: @brand-secondary;
-    }
+	&:focus {
+		border-color: @brand-secondary;
+	}
 
-    &.has--error {
-        border-color: @highlight-error;
-    }
+	&.has--error {
+		border-color: @highlight-error;
+	}
 
 }
 
@@ -41,59 +41,67 @@ input[type="password"],
 input[type="number"],
 input[type="email"],
 input[type="tel"] {
-    .unitize(height, 25);
+	.unitize(height, 25);
 
-    &.is--small {
-        .unitize(height, 20);
-    }
+	&.is--small {
+		.unitize(height, 20);
+	}
 
-    &.is--medium {
-        .unitize(height, 30);
-    }
+	&.is--medium {
+		.unitize(height, 30);
+	}
 
-    &.is--large {
-        .unitize(height, 40);
-    }
+	&.is--large {
+		.unitize(height, 40);
+	}
 }
 
 textarea {
-    resize: vertical;
-    .unitize-padding(10, 10);
+	resize: vertical;
+	.unitize-padding(10, 10);
 }
 
 label {
-    &.has--error {
-        color: @highlight-error;
-    }
+	&.has--error {
+		color: @highlight-error;
+	}
 }
 
 /*Select with custom arrow*/
 .select-wrapper {
-    .border-radius(5px);
-    .linear-gradient(@body-bg, @gray);
-    .unitize(margin-top, 10);
+	.border-radius(5px);
+	.linear-gradient(@body-bg, @gray);
+	.unitize(margin-top, 10);
 
-    select {
-        margin-top: 0;
-    }
+	select {
+		margin-top: 0;
+	}
 }
 
 select {
-    .unitize(padding-right, 30);
-    background-image: url("@{imagesPath}/dropdown.png");
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: right 0.5rem center;
-    color: @input-placeholder-color;
+	.unitize(padding-right, 30);
+	background-image: url("@{imagesPath}/dropdown.png");
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: right 0.5rem center;
+	color: @input-placeholder-color;
 }
 
 /* CAUTION: IE hackery ahead */
 select::-ms-expand {
-    display: none; /* remove default arrow on ie10 and ie11 */
+	display: none; /* remove default arrow on ie10 and ie11 */
 }
 
-::-moz-placeholder { color: @input-placeholder-color; }
-::-webkit-input-placeholder { color: @input-placeholder-color; }
-:-ms-input-placeholder { color: @input-placeholder-color; }
+::-moz-placeholder {
+	color: @input-placeholder-color;
+}
+
+::-webkit-input-placeholder {
+	color: @input-placeholder-color;
+}
+
+:-ms-input-placeholder {
+	color: @input-placeholder-color;
+}
 
 

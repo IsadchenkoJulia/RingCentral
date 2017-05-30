@@ -1,64 +1,63 @@
 footer {
-    .unitize(margin-top, 45);
-    background-color: @gray-dark;
-    color: @gray;
+	.unitize(margin-top, 45);
+	background-color: @gray-dark;
+	color: @gray;
 
+	.footerLogos {
+		.unitize-padding(38, 0);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 
-    .footerLogos {
-        .unitize-padding(38, 0);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+		.trustLogos {
+			width: 50%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
 
-        .trustLogos {
-            width: 50%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-    }
+	.footerExtra {
+		.unitize-padding(30, 0);
+		border-top: 1px solid @gray;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 
-    .footerExtra {
-        .unitize-padding(30, 0);
-        border-top: 1px solid @gray;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+		* {
+			.unitize(12);
+			margin: 0;
+		}
 
-        * {
-            .unitize(12);
-            margin: 0;
-        }
+		ul {
+			> li {
+				.unitize-padding(0, 7);
+				list-style: none;
+				float: left;
+				border-left: 1px solid @gray;
+				border-right: 1px solid transparent;
+				line-height: 0.8;
 
-        ul {
-            > li{
-                .unitize-padding(0, 7);
-                list-style: none;
-                float: left;
-                border-left: 1px solid @gray;
-                border-right: 1px solid transparent;
-                line-height: 0.8;
+				&:first-child {
+					border-left: none;
+				}
 
-                &:first-child {
-                    border-left: none;
-                }
+				&:last-child {
+					padding-right: 0;
+					border-right: none;
+				}
 
-                &:last-child {
-                    padding-right: 0;
-                    border-right: none;
-                }
+				a {
 
-                a {
+					color: @gray;
 
-                    color: @gray;
+					&:hover {
+						color: @gray;
+						text-decoration: underline;
+					}
+				}
 
-                    &:hover {
-                        color: @gray;
-                        text-decoration: underline;
-                    }
-                }
-
-            }
-        }
-    }
+			}
+		}
+	}
 }

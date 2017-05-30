@@ -26,19 +26,20 @@ In addition to the general `.unitize()` mixin, contains specific mixins to quick
 `.unitize-variable(@value)`<br/>
 */
 
-	// @deprecated unitize mixin which should be called like ```.unitize(200, @remScaleFactor, height);```
+// @deprecated unitize mixin which should be called like ```.unitize(200, @remScaleFactor, height);```
 .unitize(@value, @baseValue: @remScaleFactor, @property: font-size) when (isnumber(@value)) and(isnumber(@baseValue)) and (iskeyword(@property)) {
 	@pxValue: @value;
 	@remValue: (@value / @baseValue);
-	@{property}: ~"@{pxValue}px";
-	@{property}: ~"@{remValue}rem";
+		@{property}: ~"@{pxValue}px";
+		@{property}: ~"@{remValue}rem";
 }
-	// New default unitize mixin which should be called like ```.unitize(height, 200);```
+
+// New default unitize mixin which should be called like ```.unitize(height, 200);```
 .unitize(@property, @value, @baseValue: @remScaleFactor) when (iskeyword(@property)) and (isnumber(@value)) and (isnumber(@baseValue)) {
 	@pxValue: @value;
 	@remValue: (@value / @baseValue);
-	@{property}: ~"@{pxValue}px";
-	@{property}: ~"@{remValue}rem";
+		@{property}: ~"@{pxValue}px";
+		@{property}: ~"@{remValue}rem";
 }
 
 .unitize-double(@property, @firstValue, @secondValue, @baseValue: @remScaleFactor) {
@@ -48,8 +49,8 @@ In addition to the general `.unitize()` mixin, contains specific mixins to quick
 	@pxSecondValue: @secondValue;
 	@emSecondValue: (@secondValue / @baseValue);
 
-	@{property}: ~"@{pxFirstValue}px @{pxSecondValue}px";
-	@{property}: ~"@{emFirstValue}rem @{emSecondValue}rem";
+		@{property}: ~"@{pxFirstValue}px @{pxSecondValue}px";
+		@{property}: ~"@{emFirstValue}rem @{emSecondValue}rem";
 }
 
 .unitize-multiple(@topValue, @rightValue, @bottomValue: @topValue, @leftValue: @rightValue, @baseValue: @remScaleFactor, @property: padding) {
@@ -65,8 +66,8 @@ In addition to the general `.unitize()` mixin, contains specific mixins to quick
 	@pxLeftValue: @leftValue;
 	@emLeftValue: (@leftValue / @baseValue);
 
-	@{property}: ~"@{pxTopValue}px @{pxRightValue}px @{pxBottomValue}px @{pxLeftValue}px";
-	@{property}: ~"@{emTopValue}rem @{emRightValue}rem @{emBottomValue}rem @{emLeftValue}rem";
+		@{property}: ~"@{pxTopValue}px @{pxRightValue}px @{pxBottomValue}px @{pxLeftValue}px";
+		@{property}: ~"@{emTopValue}rem @{emRightValue}rem @{emBottomValue}rem @{emLeftValue}rem";
 }
 
 .unitize-height(@value, @baseValue: @remScaleFactor) {
@@ -90,7 +91,7 @@ In addition to the general `.unitize()` mixin, contains specific mixins to quick
 }
 
 .unitize-min-width(@value, @baseValue: @remScaleFactor) {
-    .unitize(min-width, @value, @baseValue);
+	.unitize(min-width, @value, @baseValue);
 }
 
 .unitize-margin(@topValue, @rightValue, @bottomValue: @topValue, @leftValue: @rightValue, @baseValue: @remScaleFactor) {

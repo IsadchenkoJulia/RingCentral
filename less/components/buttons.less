@@ -13,98 +13,98 @@ Creates a basic button. Button type classes can be added by using multiple class
 */
 
 .button {
-    .transition(background-color 0.3s ease);
-    .unitize-padding(0, 10);
-    .unitize(height, 48);
-    .unitize(line-height, 48);
-    .border-radius(5px);
-    .appearance();
-    .unitize(font-size, @button-font-size);
-    -webkit-font-smoothing: inherit;
-    display: inline-block;
-    position: relative;
-    font-weight: @font-weight-medium;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-    border: none;
-    background-color: @brand-secondary;
-    color: @text-color-light;
-    float: none;
+	.transition(background-color 0.3s ease);
+	.unitize-padding(0, 10);
+	.unitize(height, 48);
+	.unitize(line-height, 48);
+	.border-radius(5px);
+	.appearance();
+	.unitize(font-size, @button-font-size);
+	-webkit-font-smoothing: inherit;
+	display: inline-block;
+	position: relative;
+	font-weight: @font-weight-medium;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	border: none;
+	background-color: @brand-secondary;
+	color: @text-color-light;
+	float: none;
 
-    &:hover {
-        color: @text-color-light;
-        text-decoration: none;
-        background-color: @brand-secondary-light;
-    }
+	&:hover {
+		color: @text-color-light;
+		text-decoration: none;
+		background-color: @brand-secondary-light;
+	}
 
-    &:focus {
-        outline: none;
-    }
+	&:focus {
+		outline: none;
+	}
 
-    small {
-        display: block;
-        font-weight: @font-weight-medium;
-    }
+	small {
+		display: block;
+		font-weight: @font-weight-medium;
+	}
 
-    /*
-    ######Button size class
-    Adding a button-size class creates a larger or smaller button or changes the button properies.
+	/*
+	######Button size class
+	Adding a button-size class creates a larger or smaller button or changes the button properies.
 
-    Options: `isLarge`, `isSmall`
-    ```
-    <button class="button isLarge">
-        Large button
-    </button>
-    ```
-    */
+	Options: `isLarge`, `isSmall`
+	```
+	<button class="button isLarge">
+		Large button
+	</button>
+	```
+	*/
 
-    &.isSmall {
-        .unitize(height, 38);
-        .unitize(font-size, 14);
-        .unitize(line-height, 38);
-        font-weight: @font-weight-bold;
-    }
+	&.isSmall {
+		.unitize(height, 38);
+		.unitize(font-size, 14);
+		.unitize(line-height, 38);
+		font-weight: @font-weight-bold;
+	}
 
-    &.isLarge {
-        .unitize(height, 62);
-        .unitize(font-size, 20);
-        .unitize(line-height, 62);
-        font-weight: @font-weight-bold;
-        text-transform: uppercase;
+	&.isLarge {
+		.unitize(height, 62);
+		.unitize(font-size, 20);
+		.unitize(line-height, 62);
+		font-weight: @font-weight-bold;
+		text-transform: uppercase;
 
-        small {
-            .unitize(font-size, 14);
-            .unitize(line-height, 17);
-            font-weight: @font-weight-medium;
-            text-transform: none;
-        }
-    }
+		small {
+			.unitize(font-size, 14);
+			.unitize(line-height, 17);
+			font-weight: @font-weight-medium;
+			text-transform: none;
+		}
+	}
 
-    /*
-    ######Button type class
+	/*
+	######Button type class
 
-    Options: `isPrimary`, `isSecondary`
-    ```
-    <button class="button isPrimary">
-        Primary
-    </button>
-    ```
-    */
-    &.isPrimary {
-        background-color: @brand-primary;
+	Options: `isPrimary`, `isSecondary`
+	```
+	<button class="button isPrimary">
+		Primary
+	</button>
+	```
+	*/
+	&.isPrimary {
+		background-color: @brand-primary;
 
-        &:hover {
-            background-color: @brand-primary-light;
-        }
-    }
+		&:hover {
+			background-color: @brand-primary-light;
+		}
+	}
 
-    &.isSecondary {
-        background-color: @brand-secondary;
+	&.isSecondary {
+		background-color: @brand-secondary;
 
-        &:hover {
-            background-color: @brand-secondary-light;
-        }
-    }
+		&:hover {
+			background-color: @brand-secondary-light;
+		}
+	}
 }
 

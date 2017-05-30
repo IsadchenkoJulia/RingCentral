@@ -221,26 +221,26 @@ Creates a basic button. Button type classes can be added by using multiple class
   color: #fff;
   float: none;
   /*
-    ######Button size class
-    Adding a button-size class creates a larger or smaller button or changes the button properies.
+	######Button size class
+	Adding a button-size class creates a larger or smaller button or changes the button properies.
 
-    Options: `isLarge`, `isSmall`
-    ```
-    <button class="button isLarge">
-        Large button
-    </button>
-    ```
-    */
+	Options: `isLarge`, `isSmall`
+	```
+	<button class="button isLarge">
+		Large button
+	</button>
+	```
+	*/
   /*
-    ######Button type class
+	######Button type class
 
-    Options: `isPrimary`, `isSecondary`
-    ```
-    <button class="button isPrimary">
-        Primary
-    </button>
-    ```
-    */
+	Options: `isPrimary`, `isSecondary`
+	```
+	<button class="button isPrimary">
+		Primary
+	</button>
+	```
+	*/
 }
 .button:hover {
   color: #fff;

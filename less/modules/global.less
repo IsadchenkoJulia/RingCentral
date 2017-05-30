@@ -6,105 +6,104 @@ Defines the global styles.
 */
 
 * {
-    .box-sizing();
+	.box-sizing();
 }
 
 html, body {
-    min-height: 100%;
+	min-height: 100%;
 }
 
 body {
-    .unitize(font-size, @font-size-base);
-    font-family: 'Lato', sans-serif;
-    color: @text-color;
-    font-weight: @font-weight-normal;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
+	.unitize(font-size, @font-size-base);
+	font-family: 'Lato', sans-serif;
+	color: @text-color;
+	font-weight: @font-weight-normal;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
 }
 
 .container {
-    .clearfix();
-    //.unitize-max-width(@container-width);
-    .unitize-width(@container-width);
-    margin: 0 auto;
+	.clearfix();
+	//.unitize-max-width(@container-width);
+	.unitize-width(@container-width);
+	margin: 0 auto;
 }
 
 img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+	display: block;
+	max-width: 100%;
+	height: auto;
 }
 
 a {
-    color: @link-color;
-    text-decoration: none;
-    outline: none;
-    cursor: pointer;
-    .transition(color 0.3s ease);
+	color: @link-color;
+	text-decoration: none;
+	outline: none;
+	cursor: pointer;
+	.transition(color 0.3s ease);
 
-    &:hover, &:active {
-        color: @link-hover-color;
-    }
+	&:hover, &:active {
+		color: @link-hover-color;
+	}
 }
 
 ul {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
-
 
 // Font
 h1, h2, h3, h4, h5, h6 {
-    .unitize(line-height, 26);
-    .unitize-margin(28, 0, 10, 0);
-    font-weight: @font-weight-normal;
-    color: @brand-secondary;
+	.unitize(line-height, 26);
+	.unitize-margin(28, 0, 10, 0);
+	font-weight: @font-weight-normal;
+	color: @brand-secondary;
 }
 
 h1 {
-    .unitize(@font-size-h1, 16, font-size);
-    .unitize-margin(5, 0, 20, 0);
-    .unitize(line-height, 52);
+	.unitize(@font-size-h1, 16, font-size);
+	.unitize-margin(5, 0, 20, 0);
+	.unitize(line-height, 52);
 }
 
 h2 {
-    .unitize(@font-size-h2, 16, font-size);
-    .unitize(line-height, 44);
-    .unitize-margin(72, 40);
-    text-align: center;
+	.unitize(@font-size-h2, 16, font-size);
+	.unitize(line-height, 44);
+	.unitize-margin(72, 40);
+	text-align: center;
 }
 
 h3 {
-    .unitize(@font-size-h3, 16, font-size);
-    .unitize-margin(20, 0);
+	.unitize(@font-size-h3, 16, font-size);
+	.unitize-margin(20, 0);
 }
 
 h4 {
-    .unitize(@font-size-h4, 16, font-size);
-    text-transform: uppercase;
-    font-weight: @font-weight-medium;
+	.unitize(@font-size-h4, 16, font-size);
+	text-transform: uppercase;
+	font-weight: @font-weight-medium;
 }
 
 h5 {
-    .unitize(@font-size-h5, 16, font-size);
-    color: @text-color;
-    font-weight: @font-weight-bold;
+	.unitize(@font-size-h5, 16, font-size);
+	color: @text-color;
+	font-weight: @font-weight-bold;
 }
 
 h6 {
-    .unitize(@font-size-h6, 16, font-size);
+	.unitize(@font-size-h6, 16, font-size);
 }
 
 p {
-    .unitize(@font-size-base, 16, font-size);
-    .unitize(line-height, 24);
-    .unitize-margin(0, 0, 20, 0);
+	.unitize(@font-size-base, 16, font-size);
+	.unitize(line-height, 24);
+	.unitize-margin(0, 0, 20, 0);
 }
 
 b, strong {
-    font-weight: @font-weight-bold;
+	font-weight: @font-weight-bold;
 }
 
 sub, sup {
-    font-size: 64%;
+	font-size: 64%;
 }

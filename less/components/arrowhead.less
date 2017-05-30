@@ -1,20 +1,20 @@
 .arrowhead {
-    .unitize(font-size, 16);
-    .unitize-margin(18, 0, 0);
-    text-transform: none;
-    position: absolute;
-    left: 50%;
-    top: 100%;
-    white-space: nowrap;
-    font-weight: @font-weight-medium;
+	.unitize(font-size, 16);
+	.unitize-margin(18, 0, 0);
+	text-transform: none;
+	position: absolute;
+	left: 50%;
+	top: 100%;
+	white-space: nowrap;
+	font-weight: @font-weight-medium;
 
-    &::before {
-        .icon-sprite();
-        .unitize(margin-right, 15);
-        .unitize(top, -9);
-        content: "";
-        display: block;
-        float: left;
-        position: relative;
-    }
+	&::before {
+		.icon-sprite();
+		.unitize(margin-right, 15);
+		.unitize(top, -9);
+		content: "";
+		display: block;
+		float: left;
+		position: relative;
+	}
 }

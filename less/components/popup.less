@@ -1,39 +1,39 @@
 .overlay {
-    z-index: 10;
-    background: @overlay-bg;
-    display: none;
-    cursor: pointer;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+	z-index: 10;
+	background: @overlay-bg;
+	display: none;
+	cursor: pointer;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 
-    .close {
-        .unitize-padding(5, 0);
-        .unitize(16);
-        position: absolute;
-        bottom: 100%;
-        right: 0;
-        color: @text-color-light;
-        .opacity(0.8);
+	.close {
+		.unitize-padding(5, 0);
+		.unitize(16);
+		position: absolute;
+		bottom: 100%;
+		right: 0;
+		color: @text-color-light;
+		.opacity(0.8);
 
-        &:hover, &:active {
-            .opacity(1);
-        }
-    }
+		&:hover, &:active {
+			.opacity(1);
+		}
+	}
 
-    .popup {
-        @popupWidth: 640;
-        @popupHeight: 360;
+	.popup {
+		@popupWidth: 640;
+		@popupHeight: 360;
 
-        .unitize-margin(@popupHeight / -2, 0, 0, @popupWidth / -2);
-        .unitize-width(640);
-        .unitize-height(360);
-        position: absolute;
-        display: inline-block;
-        top: 50%;
-        left: 50%;
-    }
+		.unitize-margin(@popupHeight / -2, 0, 0, @popupWidth / -2);
+		.unitize-width(640);
+		.unitize-height(360);
+		position: absolute;
+		display: inline-block;
+		top: 50%;
+		left: 50%;
+	}
 }
 
