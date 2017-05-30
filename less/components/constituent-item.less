@@ -14,6 +14,7 @@
 
     [class^="circleItem-"] {
         > a {
+            .transition(opacity 0.3s ease);
             .unitize-margin(-@circleRadius, 0, 0, -@circleRadius);
             .border-radius(@circleDiameter * 1px);
             .rem-sprite-background (@circleDiameter * 2, @circleDiameter * @circleCount, @circleDiameter, @circleDiameter, "circle-icons.png");
@@ -23,6 +24,7 @@
             justify-content: center;
 
             &:hover, &:active {
+                .opacity(0.74);
                 background-color: @brand-secondary-light;
             }
         }
@@ -50,11 +52,6 @@
                 .unitize-double(background-position, 0, -@backgroundPositionY);
                 left: (50 + sin(@itemDeg * 1deg) * 50) * 1%;
                 top: (50 - cos(@itemDeg * 1deg) * 50) * 1%;
-
-                &:hover, &:active {
-                    .unitize-double(background-position, -@circleDiameter, -@backgroundPositionY);
-                    //.opacity(0.74);
-                }
             }
 
             > span {

@@ -420,7 +420,7 @@ select {
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: right 0.5rem center;
-  color: #a5afb5;
+  color: #585858;
 }
 /* CAUTION: IE hackery ahead */
 select::-ms-expand {
@@ -428,13 +428,13 @@ select::-ms-expand {
   /* remove default arrow on ie10 and ie11 */
 }
 ::-moz-placeholder {
-  color: #a5afb5;
+  color: #585858;
 }
 ::-webkit-input-placeholder {
-  color: #a5afb5;
+  color: #585858;
 }
 :-ms-input-placeholder {
-  color: #a5afb5;
+  color: #585858;
 }
 form {
   display: block;
@@ -514,6 +514,11 @@ fieldset {
   background-color: #d4d4d4;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.socials > a > img[src$=".svg"] {
+  width: 60%;
+  height: 55%;
 }
 .socials > a:first-child {
   margin-left: 0;
@@ -604,6 +609,11 @@ fieldset {
   position: relative;
 }
 .constituentsCircle [class^="circleItem-"] > a {
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -ms-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
   margin: -38.5px 0px 0px -38.5px;
   margin: -2.40625rem 0rem 0rem -2.40625rem;
   border-radius: 77px;
@@ -626,6 +636,9 @@ fieldset {
 }
 .constituentsCircle [class^="circleItem-"] > a:hover,
 .constituentsCircle [class^="circleItem-"] > a:active {
+  -moz-opacity: 0.74;
+  -khtml-opacity: 0.74;
+  opacity: 0.74;
   background-color: #0090c2;
 }
 .constituentsCircle [class^="circleItem-"] > span {
@@ -651,11 +664,6 @@ fieldset {
   left: 50%;
   top: 0%;
 }
-.constituentsCircle .circleItem-0 > a:hover,
-.constituentsCircle .circleItem-0 > a:active {
-  background-position: -77px -847px;
-  background-position: -4.8125rem -52.9375rem;
-}
 .constituentsCircle .circleItem-0 > span {
   left: 50%;
   top: -6%;
@@ -677,11 +685,6 @@ fieldset {
   left: 75%;
   top: 6.69872981%;
 }
-.constituentsCircle .circleItem-1 > a:hover,
-.constituentsCircle .circleItem-1 > a:active {
-  background-position: -77px -770px;
-  background-position: -4.8125rem -48.125rem;
-}
 .constituentsCircle .circleItem-1 > span {
   left: 78%;
   top: 1.50257739%;
@@ -691,11 +694,6 @@ fieldset {
   background-position: 0rem -43.3125rem;
   left: 93.30127019%;
   top: 25%;
-}
-.constituentsCircle .circleItem-2 > a:hover,
-.constituentsCircle .circleItem-2 > a:active {
-  background-position: -77px -693px;
-  background-position: -4.8125rem -43.3125rem;
 }
 .constituentsCircle .circleItem-2 > span {
   left: 98.49742261%;
@@ -707,11 +705,6 @@ fieldset {
   left: 100%;
   top: 50%;
 }
-.constituentsCircle .circleItem-3 > a:hover,
-.constituentsCircle .circleItem-3 > a:active {
-  background-position: -77px -616px;
-  background-position: -4.8125rem -38.5rem;
-}
 .constituentsCircle .circleItem-3 > span {
   left: 106%;
   top: 50%;
@@ -721,11 +714,6 @@ fieldset {
   background-position: 0rem -33.6875rem;
   left: 93.30127019%;
   top: 75%;
-}
-.constituentsCircle .circleItem-4 > a:hover,
-.constituentsCircle .circleItem-4 > a:active {
-  background-position: -77px -539px;
-  background-position: -4.8125rem -33.6875rem;
 }
 .constituentsCircle .circleItem-4 > span {
   left: 98.49742261%;
@@ -737,11 +725,6 @@ fieldset {
   left: 75%;
   top: 93.30127019%;
 }
-.constituentsCircle .circleItem-5 > a:hover,
-.constituentsCircle .circleItem-5 > a:active {
-  background-position: -77px -462px;
-  background-position: -4.8125rem -28.875rem;
-}
 .constituentsCircle .circleItem-5 > span {
   left: 78%;
   top: 98.49742261%;
@@ -751,11 +734,6 @@ fieldset {
   background-position: 0rem -24.0625rem;
   left: 50%;
   top: 100%;
-}
-.constituentsCircle .circleItem-6 > a:hover,
-.constituentsCircle .circleItem-6 > a:active {
-  background-position: -77px -385px;
-  background-position: -4.8125rem -24.0625rem;
 }
 .constituentsCircle .circleItem-6 > span {
   left: 50%;
@@ -774,11 +752,6 @@ fieldset {
   left: 25%;
   top: 93.30127019%;
 }
-.constituentsCircle .circleItem-7 > a:hover,
-.constituentsCircle .circleItem-7 > a:active {
-  background-position: -77px -308px;
-  background-position: -4.8125rem -19.25rem;
-}
 .constituentsCircle .circleItem-7 > span {
   left: 22%;
   top: 98.49742261%;
@@ -793,11 +766,6 @@ fieldset {
   background-position: 0rem -14.4375rem;
   left: 6.69872981%;
   top: 75%;
-}
-.constituentsCircle .circleItem-8 > a:hover,
-.constituentsCircle .circleItem-8 > a:active {
-  background-position: -77px -231px;
-  background-position: -4.8125rem -14.4375rem;
 }
 .constituentsCircle .circleItem-8 > span {
   left: 1.50257739%;
@@ -814,11 +782,6 @@ fieldset {
   left: 0%;
   top: 50%;
 }
-.constituentsCircle .circleItem-9 > a:hover,
-.constituentsCircle .circleItem-9 > a:active {
-  background-position: -77px -154px;
-  background-position: -4.8125rem -9.625rem;
-}
 .constituentsCircle .circleItem-9 > span {
   left: -6%;
   top: 50%;
@@ -834,11 +797,6 @@ fieldset {
   left: 6.69872981%;
   top: 25%;
 }
-.constituentsCircle .circleItem-10 > a:hover,
-.constituentsCircle .circleItem-10 > a:active {
-  background-position: -77px -77px;
-  background-position: -4.8125rem -4.8125rem;
-}
 .constituentsCircle .circleItem-10 > span {
   left: 1.50257739%;
   top: 22%;
@@ -853,11 +811,6 @@ fieldset {
   background-position: 0rem 0rem;
   left: 25%;
   top: 6.69872981%;
-}
-.constituentsCircle .circleItem-11 > a:hover,
-.constituentsCircle .circleItem-11 > a:active {
-  background-position: -77px 0px;
-  background-position: -4.8125rem 0rem;
 }
 .constituentsCircle .circleItem-11 > span {
   left: 22%;
@@ -1036,6 +989,10 @@ p {
 b,
 strong {
   font-weight: 700;
+}
+sub,
+sup {
+  font-size: 64%;
 }
 header .topHeader {
   padding: 14px 0px 14px 0px;
@@ -1475,8 +1432,8 @@ header .boosts .boostPeople .boostDigit::before {
 .plans .plansPreview [class^="planType"].planTypeStandart .planPrice {
   margin-top: 18px;
   margin-top: 1.125rem;
-  padding: 30px 0px 30px 0px;
-  padding: 1.875rem 0rem 1.875rem 0rem;
+  padding: 26px 0px 26px 0px;
+  padding: 1.625rem 0rem 1.625rem 0rem;
   border-color: #e5e5e5;
 }
 .plans .plansPreview [class^="planType"].planTypeStandart .planPrice > big {
