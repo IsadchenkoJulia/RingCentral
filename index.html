@@ -8,7 +8,6 @@
     <meta name="description" content=""/>
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 </head>
 
@@ -49,10 +48,16 @@
             </div>
         </div>
 
-        <a class="topBannerVideo" data-fancybox data-src="http://www.youtube.com/v/0FoTstucf9U?version=3&enablejsapi=1"
-                href="javascript:;">
+        <a href="#mediaPopup" class="topBannerVideo" >
             <span>How does a phone system in the cloud work?</span>
         </a>
+
+        <div class="overlay">
+            <div class="popup" id="mediaPopup">
+                <a href="javascript:;" class="close">Close [&times;]</a>
+                <div id="youtubePlayer"></div>
+            </div>
+        </div>
     </div>
 
     <div class="boosts">
@@ -259,7 +264,7 @@
         <div><span class="bull"></span></div>
     </div>
 
-    <h5>Integrations with Gmail<sup>&#8482;</sup> and Office 365<sup>&#8482;</sup></h5>
+    <h5>Integrations with Gmail&trade; and Office 365&trade;</h5>
     <div class="tripleGrid plansOption">
         <div><span class="bull"></span></div>
         <div><span class="bull"></span></div>
@@ -322,8 +327,10 @@
     </div>
 </footer>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="resources/scripts/video-popup.js"></script>
 
 </body>
 </html>
