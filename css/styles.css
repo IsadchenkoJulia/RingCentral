@@ -593,8 +593,8 @@ fieldset {
   background-repeat: no-repeat;
   background-position: -104px -5px;
   background-position: -6.5rem -0.3125rem;
-  margin-left: 15px;
-  margin-left: 0.9375rem;
+  margin-left: 18px;
+  margin-left: 1.125rem;
   content: "";
   display: inline-block;
 }
@@ -1241,8 +1241,8 @@ header .boosts .boostPeople .boostDigit::before {
   margin-top: 0;
 }
 .constituents .constituentsCircle {
-  margin: 90px 0px 90px 0px;
-  margin: 5.625rem 0rem 5.625rem 0rem;
+  margin: 100px 0px 100px 0px;
+  margin: 6.25rem 0rem 6.25rem 0rem;
   width: 544px;
   width: 34rem;
   height: 544px;
